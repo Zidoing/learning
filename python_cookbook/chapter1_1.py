@@ -107,3 +107,54 @@ def containAny(seq, aset):
 
 
 print
+
+"""
+1.9  maketrans  对于字符串进行过滤，及讲某些字段转换成某个字段
+"""
+
+import string
+
+
+def translator(frm='', to='', delete='', keep=None):
+    if len(to) == 1:
+        to = to * len(frm)
+    trans = string.maketrans(frm, to)
+    if keep is not None:
+        allchars = string.maketrans('', '')
+        delete = allchars.translate(allchars, keep.translate(allchars, delete))
+
+    def translate(s):
+        return s.translate(trans, delete)
+
+    return translate
+
+
+digits_only = translator(delete=string.digits)
+print digits_only('Chris Perkin : 224-7992')  # Chris Perkin : -
+digits_only = translator(keep=string.digits)
+print digits_only('Chris Perkin : 224-7992')  # 2247992
+
+"""
+1.10 过滤字符串中不属于指定集合的字符
+"""
+
+import string
+
+allchars = string.maketrans('', '')
+
+
+def makefilter(keep):
+    delchars = allchars.translate(allchars, keep)
+
+    def thefilter(s):
+        return s.translate(allchars, delchars)
+
+    return thefilter
+
+
+if __name__ == '__main__':
+    just_vowelds = makefilter('aeiouy')
+    print just_vowelds('four score and seven years age')
+    print just_vowelds('tiger ,tiger burning bright')
+    # ouoeaeeyeaae
+    # ieieuii
