@@ -180,7 +180,7 @@ def istext(s, text_characters=text_characters, threshold=0.30):
 print 'one tWo thrEe'.capitalize()
 print 'one tWo thrEE'.title()
 """
-1.13 访问子字AAAssssssssA符串
+1.13 访问子字AAAsfdsassA符串
 """
 ssxxxsss
 
