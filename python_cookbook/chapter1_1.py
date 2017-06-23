@@ -180,13 +180,9 @@ def istext(s, text_characters=text_characters, threshold=0.30):
 print 'one tWo thrEe'.capitalize()
 print 'one tWo thrEE'.title()
 """
-<<<<<<< HEAD
 1.13 访问子字AAAsssA符串
-=======
-1.13 访问子字AxxAAA符串
->>>>>>> fd26fe7889c1567541de0340cce86539f810b5cc
 """
-
+sssss
 
 
 
