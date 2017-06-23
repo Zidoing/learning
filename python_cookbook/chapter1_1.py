@@ -174,13 +174,13 @@ def istext(s, text_characters=text_characters, threshold=0.30):
 
 
 """
-1.12 控制大小写
+1.12 控制大小写AAA
 """
 
 print 'one tWo thrEe'.capitalize()
 print 'one tWo thrEE'.title()
 """
-1.13 访问子字符sssss串
+1.13 访问子字AAAA符串
 """
 
 
