@@ -4,6 +4,7 @@
 # @Author   : Z LEI
 
 # 字符串方法
+from  __future__ import division
 import operator
 
 print '13213'.isdigit()  # 纯数字
@@ -152,9 +153,45 @@ def makefilter(keep):
     return thefilter
 
 
+"""
+1.11 检查一个字符串是文本还是二进制
+"""
+import string
+
+text_characters = "".join(map(chr, range(32, 127))) + '\n\r\t\b'
+#  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+print text_characters
+_null_trans = string.maketrans("", "")
+
+
+def istext(s, text_characters=text_characters, threshold=0.30):
+    if "\0" in s:
+        return False
+    if not s:
+        return True
+    t = s.translate(_null_trans, text_characters)
+    return len(t) / len(s) <= threshold
+
+
+"""
+1.12 控制大小写
+"""
+
+print 'one tWo thrEe'.capitalize()
+print 'one tWo thrEE'.title()
+"""
+1.13 访问子字符串
+"""
+
+
+import struct
+baseformat = '5s 3x 8s 8s'
+numremain = len
+
 if __name__ == '__main__':
-    just_vowelds = makefilter('aeiouy')
-    print just_vowelds('four score and seven years age')
-    print just_vowelds('tiger ,tiger burning bright')
+    pass
+    # just_vowelds = makefilter('aeiouy')
+    # print just_vowelds('four score and seven years age')
+    # print just_vowelds('tiger ,tiger burning bright')
     # ouoeaeeyeaae
     # ieieuii
