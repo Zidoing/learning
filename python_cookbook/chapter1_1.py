@@ -179,6 +179,7 @@ def istext(s, text_characters=text_characters, threshold=0.30):
 
 print 'one tWo thrEe'.capitalize()
 print 'one tWo thrEE'.title()
+print '>>>>>>>>>>>>'
 """
 1.13 访问子字符串
 """
@@ -193,6 +194,7 @@ def reindent(s, numSpaces):
     lines = [leading_space + line.strip() for line in s.splitlines()]
     return '\n'.join(lines)
 
+
 x = """ line one
     line two   
 and line three
@@ -201,16 +203,64 @@ print x
 #  line one
 #     line two
 # and line three
-print reindent(x,4)
-    # line one
-    # line two
-    # and line three
+print reindent(x, 4)
 
 
-if __name__ == '__main__':
-    pass
-    # just_vowelds = makefilter('aeiouy')
-    # print just_vowelds('four score and seven years age')
-    # print just_vowelds('tiger ,tiger burning bright')
-    # ouoeaeeyeaae
-    # ieieuii
+# line one
+# line two
+# and line three
+
+
+def addSpaces(s, numAdd):
+    white = " " * numAdd
+    return white + white.join(s.splitlines(True))
+
+
+def numSpaces(s):
+    return [len(line) - len(line.lstrip()) for line in s.splitlines()]
+
+
+def delSpaces(s, numDel):
+    if numDel > min(numSpaces(s)):
+        raise ValueError, "removing more spaces than there are!"
+    return '\n'.join([line[numDel:] for line in s.splitlines()])
+
+
+def unIndentBlock(s):
+    return delSpaces(s, min(numSpaces(s)))
+
+
+print addSpaces(x, 4)
+print numSpaces(x)
+print unIndentBlock(x)
+
+"""
+1.15 扩展和压缩制表符
+"""
+
+x = '''\tdafas\tfasdf\tdsafsad\tadfsafsa
+fda\tfdasf\tfdsa
+'''
+mystring = x.expandtabs()
+print mystring
+mystring = x.expandtabs(2)
+print mystring
+
+
+def unexpand(astring, tablen=8):
+    import re
+    pieces = re.split(r'( +)', astring.expandtabs(tablen))
+    lensofar = 0
+    for i, piece in enumerate(pieces):
+        thislen = len(piece)
+        lensofar += thislen
+        if piece.isspace():
+            numblanks = lensofar % tablen
+            numtabs = (thislen - numblanks + tablen - 1) / tablen
+            pieces[i] = '\t' * numtabs + ' ' * numblanks
+    return ''.join(pieces)
+
+
+"""
+1.16 替换字符串中的子串
+"""
