@@ -180,16 +180,32 @@ def istext(s, text_characters=text_characters, threshold=0.30):
 print 'one tWo thrEe'.capitalize()
 print 'one tWo thrEE'.title()
 """
-1.13 访问子字AAAsssssssssssssA符串
+1.13 访问子字符串
 """
-ssxxxsss
+
+"""
+1.14 改变多行文本字符串的缩进
+"""
 
 
+def reindent(s, numSpaces):
+    leading_space = numSpaces * ' '
+    lines = [leading_space + line.strip() for line in s.splitlines()]
+    return '\n'.join(lines)
 
+x = """ line one
+    line two   
+and line three
+"""
+print x
+#  line one
+#     line two
+# and line three
+print reindent(x,4)
+    # line one
+    # line two
+    # and line three
 
-import struct
-baseformat = '5s 3x 8s 8s'
-numremain = len
 
 if __name__ == '__main__':
     pass
