@@ -264,3 +264,64 @@ def unexpand(astring, tablen=8):
 """
 1.16 替换字符串中的子串
 """
+
+
+def expand(format, d, marker='"', safe=False):
+    if safe:
+        def lookup(w):
+            return d.get(w, w.join(marker * 2))
+    else:
+        def lookup(w):
+            return d[w]
+    parts = format.split(marker)
+    parts[1::2] = map(lookup, parts[1::2])
+    return ''.join(parts)
+
+
+"""
+1.17 替换字符串中的子串 python2.4
+"""
+
+import string
+
+new_style = string.Template('this is $thing')
+print new_style.substitute({'thing': 5})
+print new_style.substitute({'thing': 'test'})
+print new_style.substitute(thing=5)
+print new_style.substitute(thing='test')
+
+"""
+1.18 一次完成多个替换
+"""
+import re
+
+
+def multiple_replace(text, adict):
+    rx = re.compile('|'.join(map(re.escape, adict)))
+
+    def one_xlat(match):
+        return adict[match.group(0)]
+
+    return rx.sub(one_xlat, text)
+
+
+"""
+1.19 检查字符串中的结束标记
+
+English is not my native language ,please excuse  typing error
+"""
+import itertools
+
+
+def anyTrue(predicate, sequence):
+    return True in itertools.imap(predicate, sequence)
+
+
+def endWith(s, *endings):
+    return anyTrue(s.endswith, endings)
+
+
+
+if __name__ == '__main__':
+    # print expand('just "a" test', {"x": "one"}, safe=True)
+    pass
