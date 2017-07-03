@@ -64,3 +64,10 @@ git log --stat 显示简略的信息
 
 
 撤销操作
+
+文本编辑器启动后，可以看到之前的提交信息。编辑后保存会覆盖原来的提交信息。
+例如，你提交后发现忘记了暂存某些需要的修改，可以像下面这样操作:
+  $ git commit -m 'initial commit'
+  $ git add forgotten_file
+  $ git commit --amend
+  
