@@ -4,7 +4,6 @@
 # @Author   : Z LEI
 
 # 字符串方法
-from  __future__ import division
 import operator
 
 print '13213'.isdigit()  # 纯数字
@@ -321,6 +320,43 @@ def endWith(s, *endings):
     return anyTrue(s.endswith, endings)
 
 
+'''
+打印出当前目录下所有的图片文件
+'''
+import os
+
+for filename in os.listdir('.'):
+    if not endWith(filename, '.jpg', '.jepg', '.gif'):
+        print filename
+
+german_ae = unicode('\xc3\xa4', 'utf-8')
+print german_ae
+
+"""
+1.21 在 unicode和普通字符串之间转换
+"""
+uncodestring = u'hello workld'
+utf8string = uncodestring.encode('utf-8')
+print utf8string
+asciistring = uncodestring.encode('ascii')
+print asciistring
+isostring = uncodestring.encode('ISO-8859-1')
+print isostring
+utf16string = uncodestring.encode('utf-16')
+print utf16string
+
+plainstring1 = unicode(utf8string, 'utf-8')
+plainstring2 = unicode(asciistring, 'ascii')
+plainstring3 = unicode(isostring, 'ISO-8859-1')
+plainstring4 = unicode(utf16string, 'utf-16')
+print plainstring1, plainstring2, plainstring3, plainstring4
+
+"""
+1.22 在标准输出中打印Unicode字符
+"""
+import codecs, sys
+
+sys.stdout = codecs.lookup('iso8859-1')[-1](sys.stdout)
 
 if __name__ == '__main__':
     # print expand('just "a" test', {"x": "one"}, safe=True)
