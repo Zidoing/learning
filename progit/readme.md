@@ -181,3 +181,7 @@ git push origin --tags
  分支创建
 Git 是怎么创建新分支的呢?很简单，它只是为你创建了一个可以移动的新的指针。比如，创建一个 testing 分
 支，你需要使用git branch命令: $ git branch testing
+
+
+分支切换
+要切换到一个已存在的分支，你需要使用git checkout命令。我们现在切换到新创建的testing分支去: $ git checkout testing
