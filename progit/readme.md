@@ -71,3 +71,5 @@ git log --stat 显示简略的信息
   $ git add forgotten_file
   $ git commit --amend
   
+  
+new
