@@ -236,4 +236,8 @@ git fetch origin
 git push origin master:dev  在远程创建一个分支并把master推送上去
 git push origin :dev 删除远程分支上的dev
   
-  xxxxxxx
+ 
+git merge origin/master 将远程分支上的文件合并到本地本质来 
+
+在远程分支上创建新的分支
+$ git checkout -b serverfix origin/serverfix
