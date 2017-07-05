@@ -259,8 +259,4 @@ git checkout -b sf master 不会跟踪远程
 
 git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
 
-g
-  fdfdfd
-  
-  ccc
-  cc
+
