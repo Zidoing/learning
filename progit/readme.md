@@ -193,9 +193,22 @@ $ git checkout -b iss53
   Switched to a new branch "iss53"
 
 分支合并
-git merge hotfix        hotfix分支名字
+git merge hotfix        hotfix分支名字  将分支hotfix合并到当前分支上
 
 删除分支
 git branch -d hotfix
 
-
+遇到冲突时的分支合并
+$ git merge iss53
+  Auto-merging index.html
+  CONFLICT (content): Merge conflict in index.html
+  Automatic merge failed; fix conflicts and then commit the result.
+此时 Git 做了合并，但是没有自动地创建一个新的合并提交。Git 会暂停下来，等待你去解决合并产生的冲突。 你可以在合并冲突后的任意时刻使用git status命令来查看那些因包含合并冲突而处于未合并 (unmerged)状态的文件:
+  $ git status
+  On branch master
+  You have unmerged paths.
+    (fix conflicts and run "git commit")
+  Unmerged paths:
+    (use "git add <file>..." to mark resolution)
+      both modified:      index.html
+  no changes added to commit (use "git add" and/or "git commit -a")
