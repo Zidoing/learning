@@ -186,6 +186,7 @@ Git 是怎么创建新分支的呢?很简单，它只是为你创建了一个可
   
   xxxxxxx
   
+<<<<<<< HEAD
   fdasfdsa
   fdsfas
   
@@ -259,3 +260,7 @@ git checkout -b sf master 不会跟踪远程
 git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
 
 g
+  fdfdfd
+  
+  ccc
+  cc
