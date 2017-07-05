@@ -243,6 +243,11 @@ git merge origin/master 将远程分支上的文件合并到本地本质来
 $ git checkout -b serverfix origin/serverfix
 
 ```
-跟踪分支  比较困难没掌握
+跟踪分支   git branch -vv 查看详细情况
 ```
+git checkout -b sf origin/master 直接跟踪远程
+git checkout -b sf master 不会跟踪远程
+
+git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
+
 
