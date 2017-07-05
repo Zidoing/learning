@@ -212,3 +212,13 @@ $ git merge iss53
     (use "git add <file>..." to mark resolution)
       both modified:      index.html
   no changes added to commit (use "git add" and/or "git commit -a")
+  
+  解决冲突后  git add命令来将其标记为冲突已解决。一旦暂存这 些原本有冲突的文件，Git 就会将它们标记为冲突已解决。
+  然后 git commit
+  
+分支详细信息
+  ➜  learning git:(master) ✗ gb -v
+  bb     54306cd [progit] page xxxx
+* master 33a312d [ahead 8] [progit] page 70
+
+--merged 与 --no-merged 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支。如 果要查看哪些分支已经合并到当前分支，可以运行git branch --merged:
