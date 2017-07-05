@@ -71,8 +71,7 @@ git log --stat 显示简略的信息
   $ git add forgotten_file
   $ git commit --amend
   
-  
-<<<<<<< HEAD
+
 取消暂存的文件
 git reset HEAD <file>... 来取消暂存    从暂存区回到修改区域
 
@@ -223,4 +222,15 @@ $ git merge iss53
 * master 33a312d [ahead 8] [progit] page 70
 
 --merged 与 --no-merged 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支。如 果要查看哪些分支已经合并到当前分支，可以运行git branch --merged:
+当查看到已经merged的分支可以直接删除掉
+当未合并的分支删除时候直接删除会报错，如果一定要删的话要加强制删除git branch -D testing
 
+
+
+git fetch origin  
+如果要同步你的工作，运行git fetch origin命令。这个命令查找“origin”是哪一个服务器(在本例 中，它是 git.ourcompany.com)，从中抓取本地没有的数据，并且更新本地数据库，移动 origin/master 指针指向新的、更新后的位置。
+
+“推送本地 的 serverfix 分支，将其作为远程仓库的 serverfix 分支”可以通过这种格式来推送本地分支到一个命名不相同的 远程分支。如果并不想让远程仓库上的分支叫做serverfix，可以运行git push origin serverfix:awesomebranch 来将本地的 serverfix 分支推送到远程仓库上的 awesomebranch 分支。
+
+git push origin master:dev  在远程创建一个分支并把master推送上去
+git push origin :dev 删除远程分支上的dev
