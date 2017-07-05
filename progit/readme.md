@@ -178,6 +178,7 @@ git push origin --tags
   $ git config --global alias.ci commit
   $ git config --global alias.st status
   
+<<<<<<< HEAD
  分支创建
 Git 是怎么创建新分支的呢?很简单，它只是为你创建了一个可以移动的新的指针。比如，创建一个 testing 分
 支，你需要使用git branch命令: $ git branch testing
@@ -234,3 +235,5 @@ git fetch origin
 
 git push origin master:dev  在远程创建一个分支并把master推送上去
 git push origin :dev 删除远程分支上的dev
+  
+  xxxxxxx
