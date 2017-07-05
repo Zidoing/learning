@@ -72,6 +72,7 @@ git log --stat 显示简略的信息
   $ git commit --amend
   
   
+<<<<<<< HEAD
 取消暂存的文件
 git reset HEAD <file>... 来取消暂存    从暂存区回到修改区域
 
@@ -222,3 +223,4 @@ $ git merge iss53
 * master 33a312d [ahead 8] [progit] page 70
 
 --merged 与 --no-merged 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支。如 果要查看哪些分支已经合并到当前分支，可以运行git branch --merged:
+
