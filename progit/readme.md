@@ -242,6 +242,7 @@ git fetch origin
 
 git push origin master:dev  在远程创建一个分支并把master推送上去
 git push origin :dev 删除远程分支上的dev
+git push origin --delete dev 删除远程上的分支
   
  
 git merge origin/master 将远程分支上的文件合并到本地本质来 
@@ -257,4 +258,4 @@ git checkout -b sf master 不会跟踪远程
 
 git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
 
-
+g
