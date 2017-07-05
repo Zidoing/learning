@@ -191,3 +191,11 @@ Git 是怎么创建新分支的呢?很简单，它只是为你创建了一个可
 新建分支并切换
 $ git checkout -b iss53
   Switched to a new branch "iss53"
+
+分支合并
+git merge hotfix        hotfix分支名字
+
+删除分支
+git branch -d hotfix
+
+
