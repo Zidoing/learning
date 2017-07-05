@@ -242,6 +242,7 @@ git merge origin/master 将远程分支上的文件合并到本地本质来
 在远程分支上创建新的分支
 $ git checkout -b serverfix origin/serverfix
 
-
-跟踪分支
+```
+跟踪分支  比较困难没掌握
+```
 
