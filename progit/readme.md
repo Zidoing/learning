@@ -186,4 +186,10 @@ Git 是怎么创建新分支的呢?很简单，它只是为你创建了一个可
 分支切换
 要切换到一个已存在的分支，你需要使用git checkout命令。我们现在切换到新创建的testing分支去: $ git checkout testing
 
-hotfix
+
+分支合并
+git merge hotfix        hotfix分支名字
+
+删除分支
+git branch -d hotfix
+
