@@ -259,11 +259,21 @@ git checkout -b sf origin/master 直接跟踪远程
 git checkout -b sf master 不会跟踪远程
 
 git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
-in master bbbb
-in master bbbb
-in master bbbb
 
-new
-in rebase aaaa
-in rebase aaaa
-in rebase aaaa
+   $ git checkout experiment
+  $ git rebase master
+  First, rewinding head to replay your work on top of it...
+  Applying: added staged command
+去分支上rebase master  后会在就会在主分支后面
+然后去主分支merge 一下之前的分支
+
+使用git rebase [basebranch] [topicbranch]命 令可以直接将特性分支(即本例中的 server)变基到目标分支(即 master)上。这样做能省去你先切换到 server 分支，再对其执行变基命令的多个步骤。
+  $ git rebase master server
+
+- 句号也是可以的。
+- 项目符号可以使用典型的连字符或星号 前面一个空格，之间用空行隔开， 但是可以依据不同的惯例有所不同。
+
+
+git fetch origin
+git merge origin/master
+$ git push origin master
