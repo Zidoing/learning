@@ -260,6 +260,8 @@ git checkout -b sf master 不会跟踪远程
 
 git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
 
+git push -u origin featureA 直接推送到远程并给他增加分支追踪
+
    $ git checkout experiment
   $ git rebase master
   First, rewinding head to replay your work on top of it...
@@ -277,3 +279,8 @@ git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程mast
 git fetch origin
 git merge origin/master
 $ git push origin master
+
+
+$ git remote add myfork (url) 
+$ git push -u myfork featureA
+
