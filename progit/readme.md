@@ -264,3 +264,6 @@ in master bbbb
 in master bbbb
 
 new
+in rebase aaaa
+in rebase aaaa
+in rebase aaaa
