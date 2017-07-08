@@ -185,9 +185,7 @@ Git 是怎么创建新分支的呢?很简单，它只是为你创建了一个可
 
   
   xxxxxxx
-<<<<<<< HEAD
-  
-<<<<<<< HEAD
+
   fdasfdsa
   fdsfas
   
@@ -284,4 +282,4 @@ $ git push origin master
 $ git remote add myfork (url) 
 $ git push -u myfork featureA
 
-118开始
+
