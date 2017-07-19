@@ -259,6 +259,8 @@ git checkout -b sf master 不会跟踪远程
 git branch -u origin/master 将当前没有跟踪远程的分支跟踪远程master
 
 git push -u origin featureA 直接推送到远程并给他增加分支追踪
+git push -u origin featureB:featureBee 将本地的b分支推送到远程的bee分支
+
 
    $ git checkout experiment
   $ git rebase master
