@@ -17,11 +17,11 @@ print 'Title'.istitle()  # 是否开头为大写
 """
  1.1 每次处理一个字符
 """
-str = 'a am a good boy'
-print list(str)
-for i in str:
+strx = 'a am a good boy'
+print list(strx)
+for i in strx:
     print i
-print [i for i in str]
+print [i for i in strx]
 a = set('aaaffff')
 b = set('fasdfasxxxxdfasf')
 print a, b
@@ -357,6 +357,96 @@ print plainstring1, plainstring2, plainstring3, plainstring4
 import codecs, sys
 
 sys.stdout = codecs.lookup('iso8859-1')[-1](sys.stdout)
+
+"""
+1.23 对Unicode数据编码并用xml和html
+"""
+print '1.23'
+import codecs
+from htmlentitydefs import codepoint2name
+
+
+def html_replace(exc):
+    if isinstance(exc, (UnicodeDecodeError, UnicodeTranslateError)):
+        s = [u'&%s;' % codepoint2name[ord(c)] for c in exc.object[exc.start:exc.end]]
+        return ''.join(s), exc.end
+    else:
+        return TypeError('can not handle %s' % exc.__name__)
+
+
+print html_replace.__name__
+"""
+1.24 让某些字符串大小写不敏感
+"""
+
+
+class iStrx(str):
+    def __init__(self, *args):
+        self._lowered = str.lower(self)
+
+    def __repr__(self):
+        return '%s(%s)' % (type(self).__name__, str.__repr__(self))
+
+    def __hash__(self):
+        return hash(self._lowered)
+
+    def lower(self):
+        return self._lowered
+
+
+"""
+1.25 将html文档转化成文本显示到unix终端上
+"""
+import sys, os, htmllib, formatter
+
+set_bold = os.popen('tput blod').read()
+set_underline = os.popen('tput smul').read()
+perform_reset = os.popen('tput sgr0').read()
+
+
+class TtyFormatter(formatter.AbstractFormatter):
+    def __init__(self, writer):
+        formatter.AbstractFormatter.__init__(self, writer)
+        self.fontState = False, False
+        self.fontStack = []
+
+    def push_font(self, font):
+        size, is_italic, is_blod, is_tt = font
+        self.fontStack.append((is_italic, is_blod))
+        self._updateFontState()
+
+    def pop_font(self, *args):
+        try:
+            self.fontStack.pop()
+        except IndexError:
+            pass
+
+        self._updateFontState()
+
+    def _updateFontState(self):
+        try:
+            newState = self.fontStack[-1]
+        except IndexError:
+            newState = False, False
+
+        if self.fontState != newState:
+            print perform_reset,
+            if newState[0]:
+                print set_underline
+            if newState[1]:
+                print set_bold
+            self.fontState = newState
+
+
+myWriter = formatter.DumbWriter()
+if sys.stdout.isatty():
+    myFormatter = TtyFormatter(myWriter)
+else:
+    myFormatter = formatter.AbstractFormatter(myWriter)
+
+myParser = htmllib.HTMLParser(myFormatter)
+myParser.feed(sys.stdin.read())
+myParser.close()
 
 if __name__ == '__main__':
     # print expand('just "a" test', {"x": "one"}, safe=True)
