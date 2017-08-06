@@ -34,3 +34,6 @@ gc = GC()
 print GC.__mro__
 gc.foo()
 gc.bar()
+
+
+        
