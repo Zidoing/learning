@@ -61,9 +61,11 @@ class AboutAttr(object):
         return 'default'
 
 
-at = AboutAttr('test')
+print '>begin'
+at = AboutAttr('222')
 print at.name
 print at.not_exised
+print '>end'
 
 
 class DevNull(object):
@@ -82,6 +84,9 @@ class DevNull(object):
 
     def __set__(self, instance, value):
         print 'attempt to assign %r ... ignoring ' % value
+
+    def __delete__(self, instance):
+        print '删除了'
 
 
 class C1(object):
