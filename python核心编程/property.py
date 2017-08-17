@@ -17,15 +17,15 @@ class ProtectAndHideX(object):
 inst = ProtectAndHideX(333333)
 print inst.x
 
-
 from math import pi
+
 
 def get_pi(dummy):
     return pi
 
 
 class PI(object):
-    pi = property(get_pi,)
+    pi = property(get_pi, )
 
 
 inst = PI()
