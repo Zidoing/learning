@@ -80,14 +80,13 @@ void CreateListHead(LinkList *L, int n) {
     int i;
     srand(time(0));
     *L = (LinkList) malloc(sizeof(Node));
-    (*L).next = NULL;
+    (*L)->next = NULL;
     for (int k = 0; k < n; ++k) {
         p = (LinkList) malloc(sizeof(Node));
         p->data = rand() % 100 + 1;
-        p->next = (*L).next;
+        p->next = (*L)->next;
         (*L)->next = p;
     }
-
 }
 
 void CreateListTail(LinkList *L, int n) {
