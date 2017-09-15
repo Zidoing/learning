@@ -39,6 +39,7 @@ void MiniSpanTree_Prim(MGraph G) {
             }
             j++;
         }
+        
         printf("%d %d", adjvex[k], k);
         lowcost[k] = 0;
         for (int j = 1; j < G.numVertexes; ++j) {
