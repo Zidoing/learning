@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .big{
+            font-size: 20px;
+        }
+        .small{
+            font-size: 10px;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="div1" class="div1"> zhoulei nihao</div>
+<input type="button" onclick="changebiger()" value="变大">
+<input type="button" onclick="changesmnall()" value="变小">
+
+<script>
+    function changebiger() {
+        var ele = document.getElementById('div1');
+        ele.setAttribute('class','big red')
+    }
+    function changesmnall() {
+        var ele = document.getElementById('div1');
+        ele.className = 'small'
+    }
+</script>
+
+</body>
+</html>

@@ -7,38 +7,83 @@
 
     <style>
 
-        body{
-            border:solid ;
+        body {
+            border: dashed;
         }
+
         .div1 {
-            border:2px dashed black;
-            height:200px;
-            width:20%;
+            border: 2px dashed black;
+            height: 200px;
+            width: 20%;
             background-color: green;
-            margin:10px;
+            margin: 10px;
         }
-        .div2{
-            border:2px dashed black;
-            height:200px;
-            width:30%;
+
+        .div2 {
+            border: 2px dashed black;
+            height: 200px;
+            width: 30%;
             background-color: red;
-            margin:10px;
+            margin: 10px;
+            float: left;
         }
-        .div3{
-            border:2px dashed black;
-            height:200px;
-            width:40%;
+
+        .div3 {
+            border: 2px dashed black;
+            height: 200px;
+            width: 40%;
             background-color: blue;
+        }
+
+        .outer {
+            background-color: blue;
+            border:1px solid;
+        }
+
+        .menu1 {
+            width: 100px;
+            height: 50px;
+            color: gold;
+            float: left;
+            background-color: coral;
+        }
+
+        .menu2 {
+            width: 100px;
+            height: 50px;
+            color: gold;
+            float: left;
+            background-color: aquamarine;
+        }
+        .bottom{
+            text-align: center;
+            background-color: red;
+            clear: left;
         }
     </style>
 </head>
 <body>
 
 
+<!--<div class="div1">div1</div>-->
+<!--<div class="div2">div2</div>-->
+<!--<div class="div3">div3</div>-->
 
 
-<div class="div1">div1</div>
-<div class="div2">div2</div>
-<div class="div3">div3</div>
+<div class="outer">
+    <div class="menu1">
+        菜单一
+    </div>
+    <div class="menu2">
+        菜单二
+    </div>
+
+</div>
+
+
+<div class="bottom">
+    底部
+</div>
+
 </body>
 </html>
