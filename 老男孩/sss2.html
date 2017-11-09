@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .item {
+            border: 1px solid red;1
+            float: left;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .zhezhao {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #303a40;
+            opacity: 0.5;
+            display: none;
+        }
+
+        .container:hover .zhezhao {
+            display: block;
+        }
+
+        .clearfix:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="container clearfix">
+    <div class="item">
+        <img src="01.png" alt="">
+    </div>
+    <div class="zhezhao">
+    </div>
+</div>
+<div>
+    22
+</div>
+</body>
+</html>
