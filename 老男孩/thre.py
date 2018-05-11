@@ -29,8 +29,8 @@ for i in range(100):
 for i in thread_list:
     i.join()
 
-print num
+print (num)
 
 end = time.time()
 
-print end - start
+print (end - start)

@@ -12,7 +12,7 @@ print ' '.isspace()  # 是否是空
 print 'AAAA'.isupper()  # 是否大写
 print 'Title'.istitle()  # 是否开头为大写
 """
- 1.1 每次处理一个字符
+ 1.1 每次处理一个字符   
 """
 strx = 'a am a good boy'
 print list(strx)

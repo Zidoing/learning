@@ -21,3 +21,4 @@ gevent.joinall([
     gevent.spawn(func2),
     # gevent.spawn(func3),
 ])
+print (2)
